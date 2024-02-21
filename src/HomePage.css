@@ -1,0 +1,177 @@
+.homePage {
+  height: 100vh;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.modal {
+  position: relative; /* Add this line if not already present */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(25, 39, 29, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10; /* Ensures it's above the floating image */
+}
+.address-inputs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.zipcode, .state {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid #39FF14;
+  box-shadow: 0 0 5px #39FF14;
+  border-radius: 5px;
+  outline: none;
+  width: 100px !important; /* Ensuring width applies */
+}
+
+
+.street-address {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid #39FF14;
+  box-shadow: 0 0 5px #39FF14;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+}
+
+.street-address::placeholder, .zipcode::placeholder, .state::placeholder {
+  color: #39FF14;
+  opacity: 1;
+  text-shadow: 0 0 5px #39FF14;
+}
+
+.submit-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #39FF14; /* Green text color */
+  border: 1px solid #39FF14;
+  box-shadow: 0 0 5px #39FF14;
+  border-radius: 5px;
+  width: 80px; /* Smaller width for submit button */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: rgba(57, 255, 20, 0.8); /* Lighter green on hover */
+  box-shadow: 0 0 10px #39FF14; /* Enhanced glow effect */
+}
+
+.modal select {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(47, 255, 0);
+  border: 1px solid #39FF14; /* Neon green */
+  box-shadow: 0 0 5px #39FF14; /* Glow effect */
+  border-radius: 5px;
+  width: 216px; /* Adjusted to align with the input fields */
+  outline: none;
+  text-shadow: 0 0 5px #39FF14;
+}
+
+.modal select:focus {
+  border: 1px solid #39FF14; /* Neon green */
+  box-shadow: 0 0 10px #39FF14; /* Enhanced glow effect on focus */
+  
+}
+
+.modal option {
+  background-color: black; /* For dark mode compatibility */
+  color: white;
+}
+
+.modal input {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid #39FF14; /* Neon green */
+  box-shadow: 0 0 5px #39FF14; /* Glow effect */
+  border-radius: 5px;
+  width: 200px;
+  outline: none;
+}
+
+.modal input::placeholder {
+  color: #39FF14;
+  opacity: 1; /* Full opacity */
+  text-shadow: 0 0 5px #39FF14; /* Glow effect */
+}
+
+.modal input:focus {
+  border: 1px solid #39FF14; /* Neon green */
+  box-shadow: 0 0 10px #39FF14; /* Enhanced glow effect on focus */
+}
+
+
+.logo {
+  width: 200px;
+  height: 200px;
+}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  z-index: 0; /* Ensure stars are above the background but below the text */
+}
+
+/* Animation for blinking stars */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.floatingImage {
+  position: absolute;
+  max-width: 300px; /* Adjust based on your image size */
+  max-height: 300px; /* Adjust based on your image size */
+  animation: floatAnimation 100s linear infinite;
+  z-index: 1; /* Ensure image is below the text */
+}
+
+@keyframes floatAnimation {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  5% { transform: translate(10vw, 20vh) rotate(30deg); }
+  10% { transform: translate(20vw, -20vh) rotate(60deg); }
+  15% { transform: translate(30vw, 10vh) rotate(90deg); }
+  20% { transform: translate(-20vw, 20vh) rotate(120deg); }
+  25% { transform: translate(-10vw, -10vh) rotate(150deg); }
+  30% { transform: translate(0vw, 20vh) rotate(180deg); }
+  35% { transform: translate(10vw, -20vh) rotate(210deg); }
+  40% { transform: translate(-30vw, 10vh) rotate(240deg); }
+  45% { transform: translate(30vw, 5vh) rotate(270deg); }
+  50% { transform: translate(-10vw, 30vh) rotate(300deg); }
+  55% { transform: translate(10vw, -30vh) rotate(330deg); }
+  60% { transform: translate(-20vw, 5vh) rotate(0deg); }
+  65% { transform: translate(20vw, 30vh) rotate(-30deg); }
+  70% { transform: translate(-30vw, -30vh) rotate(-60deg); }
+  75% { transform: translate(30vw, 20vh) rotate(-90deg); }
+  80% { transform: translate(-10vw, -20vh) rotate(-120deg); }
+  85% { transform: translate(10vw, 10vh) rotate(-150deg); }
+  90% { transform: translate(0vw, -10vh) rotate(-180deg); }
+  95% { transform: translate(-20vw, 10vh) rotate(-210deg); }
+}
+
+
