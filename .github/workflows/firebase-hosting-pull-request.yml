@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ATTORNEYLINKWEB }}'
-          projectId: attorneylinkweb
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RYFT_B0A4A }}'
+          projectId: ryft-b0a4a
